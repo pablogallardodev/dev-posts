@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import '../css/login.css'
 import {loginGoogle, loginUsuario, registroUsuario} from '../Firebase/client'
+import styles from '../styles/login.module.css'
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true)
@@ -17,8 +17,8 @@ const Login = () => {
   }
 
   return (
-    <main className='login-main'>
-      <section className='login-section'>
+    <main className={styles.login}>
+      <section className={styles.login_section}>
         <h1>Firebase Auth</h1>
         <input type="email" placeholder='Correo electrónico' value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
         <input type="password" placeholder='Contraseña' value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>

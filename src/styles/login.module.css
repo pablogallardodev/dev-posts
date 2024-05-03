@@ -1,10 +1,10 @@
-.login-main {
+.login {
   display: grid;
   place-items: center;
   height: 100vh;
 }
 
-.login-section {
+.login_section {
   width: 80%;
   max-width: 450px;
   display: grid;
@@ -14,12 +14,12 @@
   border-radius: 10px;
 }
 
-.login-section > h1 {
+.login_section > h1 {
   margin: 10px 0;
   text-align: center;
 }
 
-.login-section > input {
+.login_section > input {
   width: 85%;
   padding: 10px;
   margin-bottom: 15px;
@@ -30,11 +30,11 @@
   font-size: 1rem;
 }
 
-.login-section > input:focus {
+.login_section > input:focus {
   box-shadow: 0 0 15px #ced4dd;
 }
 
-.login-section > button {
+.login_section > button {
   width: 85%;
   padding: 10px;
   margin-bottom: 10px;
@@ -44,22 +44,22 @@
   font-size: 1rem;
 }
 
-.login-section > button:hover {
+.login_section > button:hover {
   box-shadow: 0px 0px 15px #ced4dd;
 }
 
-.login-section > h3 {
+.login_section > h3 {
   font-weight: 400;
   margin: 10px 0;
   text-align: center;
 }
 
-.login-section span {
+.login_section span {
   color: #1e90ff;
   cursor: pointer;
 }
 
-.login-section > .error {
+.login_section > .error {
   color: red;
   cursor: auto;
   margin-bottom: 15px;
