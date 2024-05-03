@@ -17,8 +17,8 @@ const Login = () => {
   }
 
   return (
-    <main>
-      <section>
+    <main className='login-main'>
+      <section className='login-section'>
         <h1>Firebase Auth</h1>
         <input type="email" placeholder='Correo electrónico' value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
         <input type="password" placeholder='Contraseña' value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
