@@ -1,9 +1,10 @@
 [
   {
+    "id": 1,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Hola mundo desde mi aplicación!",
     "hashtags": ["ejemplo", "programación"],
-    "post_img": "https://ejemplo.com/imagen.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-16",
     "comments": [
@@ -20,10 +21,11 @@
     ]
   },
   {
+    "id": 2,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Otra publicación interesante!",
     "hashtags": ["redes sociales", "tecnología"],
-    "post_img": "https://ejemplo.com/imagen2.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-15",
     "comments": [
@@ -40,10 +42,11 @@
     ]
   },
   {
+    "id": 3,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Compartiendo conocimiento!",
     "hashtags": ["educación", "aprendizaje"],
-    "post_img": "https://ejemplo.com/imagen3.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-14",
     "comments": [
@@ -60,10 +63,11 @@
     ]
   },
   {
+    "id": 4,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Estoy emocionado por compartir esto!",
     "hashtags": ["emoción", "compartir"],
-    "post_img": "https://ejemplo.com/imagen4.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-13",
     "comments": [
@@ -80,10 +84,11 @@
     ]
   },
   {
+    "id": 5,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Difundiendo alegría!",
     "hashtags": ["alegría", "positividad"],
-    "post_img": "https://ejemplo.com/imagen5.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-12",
     "comments": [
@@ -100,10 +105,11 @@
     ]
   },
   {
+    "id": 6,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Aprendiendo algo nuevo cada día!",
     "hashtags": ["aprendizaje", "crecimiento"],
-    "post_img": "https://ejemplo.com/imagen6.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-11",
     "comments": [
@@ -120,10 +126,11 @@
     ]
   },
   {
+    "id": 7,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Compartiendo mi pasión!",
     "hashtags": ["pasión", "intereses"],
-    "post_img": "https://ejemplo.com/imagen7.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-10",
     "comments": [
@@ -140,10 +147,11 @@
     ]
   },
   {
+    "id": 8,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Celebrando logros!",
     "hashtags": ["logros", "éxito"],
-    "post_img": "https://ejemplo.com/imagen8.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-09",
     "comments": [
@@ -160,10 +168,11 @@
     ]
   },
   {
+    "id": 9,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Un momento de reflexión!",
     "hashtags": ["reflexión", "pensamientos"],
-    "post_img": "https://ejemplo.com/imagen9.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-08",
     "comments": [
@@ -180,10 +189,11 @@
     ]
   },
   {
+    "id": 10,
     "user_name": "ejemplo_usuario",
     "post_message": "¡Agradecido por todo!",
     "hashtags": ["agradecimiento", "gratitud"],
-    "post_img": "https://ejemplo.com/imagen10.jpg",
+    "post_img": "https://placehold.co/400x300",
     "reactions": 0,
     "creation_date": "2024-04-07",
     "comments": [
