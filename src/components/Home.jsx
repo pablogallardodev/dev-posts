@@ -2,6 +2,7 @@ import { onSignOut } from '../Firebase/client'
 import useUsuairo from '../hooks/useUsuario'
 import posts from '../Firebase/post.json'
 import styles from '../styles/home.module.css'
+import AddPost from './AddPost'
 
 const Home = () => {
   const usuario = useUsuairo()
@@ -13,6 +14,7 @@ const Home = () => {
         <button onClick={ onSignOut }>Cerrar sesión</button>
       </nav>
       <div>
+        <AddPost />
         {
           posts.map( post =>
             <section key={post.id} className={styles.containerPost}>

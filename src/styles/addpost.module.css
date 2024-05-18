@@ -1,0 +1,59 @@
+.container {
+  display: grid;
+  margin: 8px 0;
+  border: 1px solid #AAA;
+  border-radius: 8px;
+  padding: 8px;
+  gap: 8px;
+}
+
+.txtMessage {
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical;
+  max-height: 6rem;
+  outline-style: none;
+}
+
+.file {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.file + span {
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #AAA;
+}
+
+.img {
+  color: #333;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.img:hover {
+  background-color: #DDD;
+  border-radius: 4px;
+}
+
+.btnSubmit {
+  cursor: pointer;
+  padding: 8px 0;
+  background-color: #3a8f5f;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+}
+
+.btnSubmit:hover {
+  background-color: #2e7f53;
+}
