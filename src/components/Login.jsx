@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {loginGoogle, loginUsuario, registroUsuario} from '../Firebase/client'
+import {loginGoogle, loginUsuario, registroUsuario} from '../Firebase/auth'
 import styles from '../styles/login.module.css'
 
 const Login = () => {

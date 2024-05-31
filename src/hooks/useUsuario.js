@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { onChangeUser } from "../Firebase/client"
+import { onChangeUser } from "../Firebase/auth"
 
 const useUsuairo = () => {
   const [usuario, setUsuario] = useState(undefined)

@@ -1,8 +1,9 @@
 import { initializeApp } from 'firebase/app'
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+const { VITE_FIREBASE_CONFIG } = import.meta.env
 
-const PROVIDER_GOOGLE = new GoogleAuthProvider();
-const firebaseConfig = {}
+const PROVIDER_GOOGLE = new GoogleAuthProvider()
+const firebaseConfig = JSON.parse(VITE_FIREBASE_CONFIG)
 
 initializeApp(firebaseConfig)
 

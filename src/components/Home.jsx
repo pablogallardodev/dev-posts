@@ -1,8 +1,12 @@
-import { onSignOut } from '../Firebase/client'
+import { onSignOut } from '../Firebase/auth'
 import useUsuairo from '../hooks/useUsuario'
 import posts from '../Firebase/post.json'
 import styles from '../styles/home.module.css'
 import AddPost from './AddPost'
+
+import { nameDatabase } from '../Firebase/database'
+
+nameDatabase()
 
 const Home = () => {
   const usuario = useUsuairo()
