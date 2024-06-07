@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore } from "firebase/firestore"
+import { getFirestore, addDoc, collection } from "firebase/firestore"
 const { VITE_FIREBASE_CONFIG } = import.meta.env
 
 const firebaseConfig = JSON.parse(VITE_FIREBASE_CONFIG)
@@ -8,6 +8,9 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore(app)
 
-export function nameDatabase() {
-  console.log("firestore name: " + db.app.name)
+export const createPost = (post) => {
+
+  addDoc(collection(db, "POSTS"), post)
+  .then(result => console.log(result))
+  .catch(error => console.log(error))
 }

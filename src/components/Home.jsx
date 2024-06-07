@@ -4,10 +4,6 @@ import posts from '../Firebase/post.json'
 import styles from '../styles/home.module.css'
 import AddPost from './AddPost'
 
-import { nameDatabase } from '../Firebase/database'
-
-nameDatabase()
-
 const Home = () => {
   const usuario = useUsuairo()
 
