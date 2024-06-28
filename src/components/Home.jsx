@@ -6,11 +6,11 @@ import AddPost from './AddPost'
 
 const Home = () => {
   const usuario = useUsuairo()
-
+  
   return (
     <div className={styles.container}>
       <nav>
-        <h1>{usuario}</h1>
+        <h1>{usuario?.email}</h1>
         <button onClick={ onSignOut }>Cerrar sesión</button>
       </nav>
       <div>

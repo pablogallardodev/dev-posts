@@ -7,6 +7,16 @@ const firebaseConfig = JSON.parse(VITE_FIREBASE_CONFIG)
 
 initializeApp(firebaseConfig)
 
+const mapToUser = (user) => {
+  const { displayName, email, photoURL } = user
+
+  return {
+    avatar: photoURL,
+    username: displayName,
+    email,
+  }
+}
+
 export function loginGoogle() {
   const auth = getAuth()
   signInWithPopup(auth, PROVIDER_GOOGLE)
@@ -18,7 +28,7 @@ export const onChangeUser = (setUsuario) => {
   const auth = getAuth()
   onAuthStateChanged(auth, (user) => {
     // console.log(user);
-    const usuario = user ? user.displayName || user.email : null
+    const usuario = user ? mapToUser(user) : null
     setUsuario(usuario)
   })
 }

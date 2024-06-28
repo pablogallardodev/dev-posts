@@ -16,6 +16,10 @@
   outline-style: none;
 }
 
+.imgPost {
+  width: 100%;
+}
+
 .file {
   width: 0.1px;
 	height: 0.1px;
