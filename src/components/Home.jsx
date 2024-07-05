@@ -1,8 +1,8 @@
 import { onSignOut } from '../Firebase/auth'
 import useUsuairo from '../hooks/useUsuario'
-import posts from '../Firebase/post.json'
 import styles from '../styles/home.module.css'
 import AddPost from './AddPost'
+import ListPost from './ListPost'
 
 const Home = () => {
   const usuario = useUsuairo()
@@ -15,19 +15,7 @@ const Home = () => {
       </nav>
       <div>
         <AddPost />
-        {
-          posts.map( post =>
-            <section key={post.id} className={styles.containerPost}>
-              <p>{post.user_name} {post.creation_date}</p>
-              <p>{post.post_message}</p>
-              <img src={post.post_img} alt={post.id} />
-              <br />
-              <span>Reacciones: {post.reactions}</span>
-              <br />
-              <span>Comentarios: {post.comments.length}</span>
-            </section>
-          )
-        }
+        <ListPost />
       </div>
     </div>
   )
