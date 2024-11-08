@@ -3,13 +3,3 @@
   grid-template-columns: 1fr 1fr 1fr;
   min-height: 100vh;
 }
-
-.containerPost {
-  margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid #aaa;
-}
-
-.containerPost > img {
-  width: 100%;
-}
