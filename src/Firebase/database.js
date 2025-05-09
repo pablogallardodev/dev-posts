@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app"
-import { getFirestore, addDoc, collection, getDocs } from "firebase/firestore"
+import { initializeApp } from 'firebase/app'
+import { getFirestore, addDoc, collection, getDocs } from 'firebase/firestore'
 const { VITE_FIREBASE_CONFIG, VITE_DATABASE_NAME } = import.meta.env
 
 const firebaseConfig = JSON.parse(VITE_FIREBASE_CONFIG)

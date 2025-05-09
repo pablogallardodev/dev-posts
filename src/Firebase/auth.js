@@ -13,15 +13,15 @@ const mapToUser = (user) => {
   return {
     avatar: photoURL,
     username: displayName,
-    email,
+    email
   }
 }
 
-export function loginGoogle() {
+export function loginGoogle () {
   const auth = getAuth()
   signInWithPopup(auth, PROVIDER_GOOGLE)
-  .then((result) => { console.log(result)})
-  .catch((error) => { console.log(error)})
+    .then((result) => { console.log(result) })
+    .catch((error) => { console.log(error) })
 }
 
 export const onChangeUser = (setUsuario) => {
@@ -41,38 +41,37 @@ export const onSignOut = () => {
 export const registroUsuario = (formData, setFormData) => {
   const auth = getAuth()
 
-  if (!formData.email || !formData.password)
-    return
+  if (!formData.email || !formData.password) { return }
 
   createUserWithEmailAndPassword(auth, formData.email, formData.password)
-  .then((result) => console.log(result))
-  .catch((err) => setFormData({...formData, error: handleError(err.code, err.message) }))
+    .then((result) => console.log(result))
+    .catch((err) => setFormData({ ...formData, error: handleError(err.code, err.message) }))
 }
 
 export const loginUsuario = (formData, setFormData) => {
   const auth = getAuth()
-  console.log(formData);
-  if (!formData.email || ! formData.password) return
+  console.log(formData)
+  if (!formData.email || !formData.password) return
 
   signInWithEmailAndPassword(auth, formData.email, formData.password)
-  .then((result) => console.log(result))
-  .catch((err) => setFormData({...formData, error: handleError(err.code, err.message) }))
+    .then((result) => console.log(result))
+    .catch((err) => setFormData({ ...formData, error: handleError(err.code, err.message) }))
 }
 
-function handleError(code, message) {
+function handleError (code, message) {
   switch (code) {
-    case "auth/wrong-password":
-      return "Correo o contraseña incorrectos."
-    case "auth/user-not-found":
-      return "Correo o contraseña incorrectos."
-    case "auth/invalid-credential":
-      return "Correo o contraseña incorrectos."
-    case "auth/invalid-email":
-      return "Por favor valida que el correo electrónico este escrito correctamente."
-    case "auth/weak-password":
-      return "La contraseña debe tener al menos 6 caracteres."
-    case "auth/email-already-in-use":
-      return "la dirección de correo electrónico ya se encuentra en uso."
+    case 'auth/wrong-password':
+      return 'Correo o contraseña incorrectos.'
+    case 'auth/user-not-found':
+      return 'Correo o contraseña incorrectos.'
+    case 'auth/invalid-credential':
+      return 'Correo o contraseña incorrectos.'
+    case 'auth/invalid-email':
+      return 'Por favor valida que el correo electrónico este escrito correctamente.'
+    case 'auth/weak-password':
+      return 'La contraseña debe tener al menos 6 caracteres.'
+    case 'auth/email-already-in-use':
+      return 'la dirección de correo electrónico ya se encuentra en uso.'
     default:
       return message
   }

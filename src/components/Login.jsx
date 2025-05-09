@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import {loginGoogle, loginUsuario, registroUsuario} from '../Firebase/auth'
+import { loginGoogle, loginUsuario, registroUsuario } from '../Firebase/auth'
 import styles from '../styles/login.module.css'
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true)
-  const [formData, setFormData] = useState({ email: '', password: '', error: ''})
+  const [formData, setFormData] = useState({ email: '', password: '', error: '' })
 
   const handleSubmit = () => {
     if (isLogin) {
@@ -13,23 +13,23 @@ const Login = () => {
       registroUsuario(formData, setFormData)
     }
 
-    setTimeout(() => setFormData({...formData, error: ''}), 3000)
+    setTimeout(() => setFormData({ ...formData, error: '' }), 3000)
   }
 
   return (
     <main className={styles.login}>
       <section className={styles.login_section}>
         <h1>Firebase Auth</h1>
-        <input type="email" placeholder='Correo electrónico' value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
-        <input type="password" placeholder='Contraseña' value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
-        <span className="error">{formData.error}</span>
-        <button onClick={handleSubmit}>{ isLogin ? 'Iniciar sesión' : 'Registrarse' }</button>
+        <input type='email' placeholder='Correo electrónico' value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+        <input type='password' placeholder='Contraseña' value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} />
+        <span className='error'>{formData.error}</span>
+        <button onClick={handleSubmit}>{isLogin ? 'Iniciar sesión' : 'Registrarse'}</button>
         <h3>ó</h3>
-        <button onClick={loginGoogle}>{ isLogin ? 'Iniciar sesión con Google' : 'Registrarse con Google'}</button>
+        <button onClick={loginGoogle}>{isLogin ? 'Iniciar sesión con Google' : 'Registrarse con Google'}</button>
         {
           isLogin
-          ? <h3>¿No tienes cuenta?<span onClick={() => setIsLogin(!isLogin) }> Crea una cuenta</span></h3>
-          : <h3>¿Ya tienes cuenta?<span onClick={() => setIsLogin(!isLogin) }> Iniciar Sesión</span></h3>
+            ? <h3>¿No tienes cuenta?<span onClick={() => setIsLogin(!isLogin)}> Crea una cuenta</span></h3>
+            : <h3>¿Ya tienes cuenta?<span onClick={() => setIsLogin(!isLogin)}> Iniciar Sesión</span></h3>
         }
       </section>
     </main>

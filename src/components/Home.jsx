@@ -4,7 +4,6 @@ import CardUser from './CardUser'
 import ListPost from './ListPost'
 
 const Home = () => {
-  
   return (
     <div className={styles.container}>
       <nav>

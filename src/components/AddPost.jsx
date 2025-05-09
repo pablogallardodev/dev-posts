@@ -5,19 +5,19 @@ import useUsuairo from '../hooks/useUsuario'
 
 const AddPost = () => {
   const [postData, setPostData] = useState({ post_message: '', post_img: '' })
-  const [enviando, setEnviando] = useState(false);
+  const [enviando, setEnviando] = useState(false)
   const usuario = useUsuairo()
 
   const handleImage = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    var file = e.target.files[0]
-    var reader = new FileReader()
-    reader.onloadend = function() {
-      setPostData({ ...postData, post_img: `${reader.result}`})
+    const file = e.target.files[0]
+    const reader = new FileReader()
+    reader.onloadend = function () {
+      setPostData({ ...postData, post_img: `${reader.result}` })
     }
 
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file)
   }
 
   const submitPost = () => {
@@ -33,21 +33,21 @@ const AddPost = () => {
     post.comments = []
 
     createPost(post)
-    .then(result => {
-      console.log(result.id)
-      setPostData({ post_message: '', post_img: '' })
-      setEnviando(false)
-    })
-    .catch(error => console.log(error))
+      .then(result => {
+        console.log(result.id)
+        setPostData({ post_message: '', post_img: '' })
+        setEnviando(false)
+      })
+      .catch(error => console.log(error))
   }
 
   return (
     <section className={styles.container}>
-      <textarea className={styles.txtMessage} placeholder="Comparte tu idea aquí..." value={postData.post_message} onChange={e => setPostData({ ...postData, post_message: e.target.value})}/>
-      { postData.post_img && <img src={postData.post_img} alt="post imagen" className={styles.imgPost}/>}
-      <input className={styles.file} type="file" id="file" onChange={handleImage}/>
-      <label htmlFor="file" className={styles.img}>📷 Foto/video</label>
-      <button className={styles.btnSubmit} onClick={submitPost} disabled={enviando}>{ enviando ? 'Creando...' : 'Crear Publicacion'}</button>
+      <textarea className={styles.txtMessage} placeholder='Comparte tu idea aquí...' value={postData.post_message} onChange={e => setPostData({ ...postData, post_message: e.target.value })} />
+      {postData.post_img && <img src={postData.post_img} alt='post imagen' className={styles.imgPost} />}
+      <input className={styles.file} type='file' id='file' onChange={handleImage} />
+      <label htmlFor='file' className={styles.img}>📷 Foto/video</label>
+      <button className={styles.btnSubmit} onClick={submitPost} disabled={enviando}>{enviando ? 'Creando...' : 'Crear Publicacion'}</button>
     </section>
   )
 }
