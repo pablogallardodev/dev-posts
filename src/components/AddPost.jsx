@@ -28,7 +28,7 @@ const AddPost = () => {
 
     post.id = crypto.randomUUID()
     post.user_name = usuario.email
-    post.reactions = 0
+    post.reactions = []
     post.creation_date = date
     post.comments = []
 

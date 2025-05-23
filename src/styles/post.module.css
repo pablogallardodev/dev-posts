@@ -51,6 +51,10 @@
   margin: 4px 8px;
 }
 
-.containerButtons > button:hover {
+.containerButtons > button:hover, .containerButtons > button.reaction:hover {
+  background-color: #eee;
+}
+
+.containerButtons > button.reaction {
   background-color: #bae0c6;
 }

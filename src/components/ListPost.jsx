@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from '../styles/post.module.css'
-import { getAllPosts } from '../Firebase/database'
+import { addReaction, getAllPosts } from '../Firebase/database'
 import heart from '../img/icons/heart.svg'
 import comments from '../img/icons/comments.svg'
 
@@ -18,6 +18,12 @@ const ListPost = () => {
     }
   }, [])
 
+  const handleReaction = async (key) => {
+    await addReaction(key)
+    const posts = await getAllPosts()
+    setPosts(posts)
+  }
+
   return posts.map(post =>
     <article key={post.id} className={styles.containerPost}>
       <section className={styles.sectionTitle}>
@@ -30,7 +36,7 @@ const ListPost = () => {
       {post.post_img && <img src={post.post_img} alt={post.id} />}
 
       <div className={styles.containerButtons}>
-        <button><img src={heart} width={16} />{post.reactions}</button>
+        <button onClick={() => handleReaction(post.key)} className={post.isReaction ? styles.reaction : null}><img src={heart} width={16} />{post.reactions.length}</button>
         <button><img src={comments} width={16} />{post.comments.length}</button>
       </div>
     </article>
