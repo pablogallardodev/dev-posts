@@ -24,3 +24,41 @@
   width: 100%;
   max-height: 300px;
 }
+
+.containerIcon{
+  display: flex;
+  justify-content: end;
+}
+
+.closeButton, .sendButton {
+  background-color: transparent;
+  border: none;
+}
+
+.closeButton > svg, .sendButton > svg {
+  width: 25px;
+  margin: 0 8px 8px 0;
+  fill: #ff2934;
+}
+
+.sendButton > svg {
+  fill: rgb(16, 103, 217);
+}
+
+.sendButton:disabled > svg {
+  fill: #b5b5b5;
+}
+
+.formComment {
+  background-color: #eee;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  font-size: small;
+}
