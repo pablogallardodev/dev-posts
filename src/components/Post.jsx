@@ -24,7 +24,7 @@ const Post = ({ post, handleReaction }) => {
           <button onClick={() => setShowComments(true)}><img src={comments} width={16} />{post.comments.length}</button>
         </div>
       </article>
-      <Comments showCommets={showComments} setShowComments={setShowComments}>
+      <Comments showCommets={showComments} setShowComments={setShowComments} keyPost={post.key} comments={post.comments}>
         <section className={styles.sectionTitle}>
           <p>{post.user_name}</p>
           <p>{post.creation_date}</p>

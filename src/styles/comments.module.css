@@ -49,7 +49,7 @@
   fill: #b5b5b5;
 }
 
-.formComment {
+.formComment, .comment {
   background-color: #eee;
   border-radius: 10px;
   margin: 10px 0;
@@ -61,4 +61,31 @@
   background-color: transparent;
   border: none;
   font-size: small;
+}
+
+.commentContainer{
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.comment {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.comment > p {
+  word-wrap: break-word;
+}
+
+.noComment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-weight: lighter;
+  font-style: italic;
 }

@@ -49,3 +49,22 @@ export const addReaction = async (key) => {
     })
   }
 }
+
+export const saveComment = async (key, comment) => {
+  const docReference = doc(db, VITE_DATABASE_NAME, key)
+  const currentEmail = userAuth.currentUser.email
+  const currentDoc = await getDoc(docReference)
+
+  // validamos si existe el documento
+  if (!currentDoc.exists()) return
+
+  const newComment = {
+    user: currentEmail,
+    date: new Date().toLocaleDateString(),
+    comment
+  }
+
+  await updateDoc(docReference, {
+    comments: arrayUnion(newComment)
+  })
+}
