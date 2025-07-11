@@ -6,21 +6,14 @@ const ListPost = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    const getPosts = async () => {
-      const posts = await getAllPosts()
-      setPosts(posts)
-    }
+    const getPosts = async () => await getAllPosts(setPosts)
 
     return () => {
       getPosts()
     }
   }, [])
 
-  const handleReaction = async (key) => {
-    await addReaction(key)
-    const posts = await getAllPosts()
-    setPosts(posts)
-  }
+  const handleReaction = async (key) => await addReaction(key)
 
   return posts.map(post => <Post key={post.key} post={post} handleReaction={handleReaction} />)
 }
