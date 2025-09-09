@@ -1,12 +1,24 @@
 .container {
-  border: 1px solid #aaa;
-  border-radius: .5rem;
-  box-shadow: -4px 4px 0 #777;
+  padding: 4px;
   display: flex;
-  margin: .5rem;
+}
+
+.container > img {
+  width: 50px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: .4rem;
+  box-shadow: -4px 4px 0 #777;
   max-width: min-content;
-  padding: .5rem;
-  position: fixed;
+  padding: .4rem;
+  position: absolute;
+  left: 4rem;
+  top: 1rem;
 }
 
 .info {

@@ -5,11 +5,11 @@ import ListPost from './ListPost'
 
 const Home = () => {
   return (
-    <div className={styles.container}>
-      <nav>
+    <div>
+      <nav className={styles.navbar}>
         <CardUser />
       </nav>
-      <section>
+      <section className={styles.body}>
         <AddPost />
         <ListPost />
       </section>
