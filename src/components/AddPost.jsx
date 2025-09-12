@@ -8,17 +8,17 @@ const AddPost = () => {
   const [enviando, setEnviando] = useState(false)
   const usuario = useUsuairo()
 
-  // const handleImage = (e) => {
-  //   e.preventDefault()
+  const handleImage = (e) => {
+    e.preventDefault()
 
-  //   const file = e.target.files[0]
-  //   const reader = new FileReader()
-  //   reader.onloadend = function () {
-  //     setPostData({ ...postData, post_img: `${reader.result}` })
-  //   }
+    const file = e.target.files[0]
+    const reader = new FileReader()
+    reader.onloadend = function () {
+      setPostData({ ...postData, post_img: `${reader.result}` })
+    }
 
-  //   reader.readAsDataURL(file)
-  // }
+    reader.readAsDataURL(file)
+  }
 
   const submitPost = () => {
     const post = postData
@@ -45,8 +45,8 @@ const AddPost = () => {
     <section className={styles.container}>
       <textarea className={styles.txtMessage} placeholder='Comparte tu idea aquí...' value={postData.post_message} onChange={e => setPostData({ ...postData, post_message: e.target.value })} />
       {postData.post_img && <img src={postData.post_img} alt='post imagen' className={styles.imgPost} />}
-      {/* <input className={styles.file} type='file' id='file' onChange={handleImage} />
-      <label htmlFor='file' className={styles.img}>📷 Foto/video</label> */}
+      <input className={styles.file} type='file' id='file' onChange={handleImage} />
+      <label htmlFor='file' className={styles.img}>📷 Foto/video</label>
       <button className={styles.btnSubmit} onClick={submitPost} disabled={enviando}>{enviando ? 'Creando...' : 'Crear Publicacion'}</button>
     </section>
   )
