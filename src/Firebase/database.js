@@ -19,12 +19,14 @@ export const getAllPosts = async (setPosts) => {
   // const result = await getDocs(q)
 
   onSnapshot(q, (querySnapshot) => {
+    console.log(currentEmail)
     const posts = querySnapshot.docs.map(document => ({
       key: document.id,
       isReaction: document.data().reactions.includes(currentEmail),
       ...document.data()
     }))
 
+    console.log(currentEmail)
     setPosts(posts)
   })
 }
