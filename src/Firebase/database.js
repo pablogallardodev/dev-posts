@@ -14,19 +14,19 @@ const userAuth = getAuth()
 export const createPost = (post) => addDoc(collection(db, VITE_DATABASE_NAME), post)
 
 export const getAllPosts = async (setPosts) => {
+  console.log('Prueba')
   const currentEmail = userAuth.currentUser ? userAuth.currentUser.email : ''
   const q = query(collection(db, VITE_DATABASE_NAME))
   // const result = await getDocs(q)
+  console.log(q)
 
   onSnapshot(q, (querySnapshot) => {
-    console.log(currentEmail)
     const posts = querySnapshot.docs.map(document => ({
       key: document.id,
       isReaction: document.data().reactions.includes(currentEmail),
       ...document.data()
     }))
 
-    console.log(currentEmail)
     setPosts(posts)
   })
 }
