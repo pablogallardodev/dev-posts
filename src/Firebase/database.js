@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-import { getFirestore, addDoc, collection, query, orderBy, doc, getDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from 'firebase/firestore'
+import { getFirestore, addDoc, collection, query, doc, getDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from 'firebase/firestore'
 const { VITE_FIREBASE_CONFIG, VITE_DATABASE_NAME } = import.meta.env
 
 const firebaseConfig = JSON.parse(VITE_FIREBASE_CONFIG)
@@ -14,8 +14,8 @@ const userAuth = getAuth()
 export const createPost = (post) => addDoc(collection(db, VITE_DATABASE_NAME), post)
 
 export const getAllPosts = async (setPosts) => {
-  const currentEmail = userAuth.currentUser.email
-  const q = query(collection(db, VITE_DATABASE_NAME), orderBy('creation_date', 'desc'))
+  const currentEmail = userAuth.currentUser ? userAuth.currentUser.email : ''
+  const q = query(collection(db, VITE_DATABASE_NAME))
   // const result = await getDocs(q)
 
   onSnapshot(q, (querySnapshot) => {
