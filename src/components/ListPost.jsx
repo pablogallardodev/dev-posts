@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { addReaction, getAllPosts } from '../Firebase/database'
 import Post from './Post'
+import useUsuairo from '../hooks/useUsuario'
 
 const ListPost = () => {
+  const usuario = useUsuairo()
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -11,7 +13,7 @@ const ListPost = () => {
     return () => {
       getPosts()
     }
-  }, [])
+  }, [usuario])
 
   const handleReaction = async (key) => await addReaction(key)
 

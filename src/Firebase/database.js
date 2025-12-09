@@ -9,10 +9,11 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore(app)
 
+const userAuth = getAuth()
+
 export const createPost = (post) => addDoc(collection(db, VITE_DATABASE_NAME), post)
 
 export const getAllPosts = async (setPosts) => {
-  const userAuth = getAuth()
   const currentEmail = userAuth.currentUser.email
   const q = query(collection(db, VITE_DATABASE_NAME), orderBy('creation_date', 'desc'))
   // const result = await getDocs(q)
@@ -30,7 +31,6 @@ export const getAllPosts = async (setPosts) => {
 
 export const addReaction = async (key) => {
   const docReference = doc(db, VITE_DATABASE_NAME, key)
-  const userAuth = getAuth()
   const currentEmail = userAuth.currentUser.email
   const currentDoc = await getDoc(docReference)
 
@@ -54,7 +54,6 @@ export const addReaction = async (key) => {
 
 export const saveComment = async (key, comment) => {
   const docReference = doc(db, VITE_DATABASE_NAME, key)
-  const userAuth = getAuth()
   const currentEmail = userAuth.currentUser.email
   const currentDoc = await getDoc(docReference)
 
