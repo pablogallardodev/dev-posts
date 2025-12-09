@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-import { getFirestore, addDoc, collection, query, doc, getDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from 'firebase/firestore'
+import { getFirestore, addDoc, collection, query, orderBy, doc, getDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from 'firebase/firestore'
 const { VITE_FIREBASE_CONFIG, VITE_DATABASE_NAME } = import.meta.env
 
 const firebaseConfig = JSON.parse(VITE_FIREBASE_CONFIG)
@@ -9,16 +9,13 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore(app)
 
-const userAuth = getAuth()
-
 export const createPost = (post) => addDoc(collection(db, VITE_DATABASE_NAME), post)
 
 export const getAllPosts = async (setPosts) => {
-  console.log('Prueba')
-  const currentEmail = userAuth.currentUser ? userAuth.currentUser.email : ''
-  const q = query(collection(db, VITE_DATABASE_NAME))
+  const userAuth = getAuth()
+  const currentEmail = userAuth.currentUser.email
+  const q = query(collection(db, VITE_DATABASE_NAME), orderBy('creation_date', 'desc'))
   // const result = await getDocs(q)
-  console.log(q)
 
   onSnapshot(q, (querySnapshot) => {
     const posts = querySnapshot.docs.map(document => ({
@@ -33,6 +30,7 @@ export const getAllPosts = async (setPosts) => {
 
 export const addReaction = async (key) => {
   const docReference = doc(db, VITE_DATABASE_NAME, key)
+  const userAuth = getAuth()
   const currentEmail = userAuth.currentUser.email
   const currentDoc = await getDoc(docReference)
 
@@ -56,6 +54,7 @@ export const addReaction = async (key) => {
 
 export const saveComment = async (key, comment) => {
   const docReference = doc(db, VITE_DATABASE_NAME, key)
+  const userAuth = getAuth()
   const currentEmail = userAuth.currentUser.email
   const currentDoc = await getDoc(docReference)
 

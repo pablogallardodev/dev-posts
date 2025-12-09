@@ -34,7 +34,7 @@ const AddPost = () => {
 
     createPost(post)
       .then(result => {
-        console.log(result.id)
+        // console.log(result.id)
         setPostData({ post_message: '', post_img: '' })
         setEnviando(false)
       })
